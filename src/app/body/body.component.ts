@@ -42,6 +42,11 @@ export class BodyComponent {
     this.resetearFormulario();
   }
 
+  eliminarCategoria(categoria: any) {
+    let indice = this.categorias.indexOf(categoria);
+    this.categorias.splice(indice, 1);
+  }
+
   private resetearFormulario() {
     this.idIntroducido = 0;
     this.nombreIntroducido = '';
@@ -49,3 +54,4 @@ export class BodyComponent {
   }
 
 }
+
