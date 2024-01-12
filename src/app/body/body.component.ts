@@ -47,6 +47,19 @@ export class BodyComponent {
     this.categorias.splice(indice, 1);
   }
 
+  cargarCategoria(categoria: any) {
+    this.idIntroducido = categoria.id;
+    this.nombreIntroducido = categoria.nombre;
+    this.descripcionIntroducido = categoria.descripcion;
+  }
+
+  modificarCategoria() {
+    let indice = this.categorias.indexOf(this.categorias.find(categoria => categoria.id == this.idIntroducido));
+    this.categorias[indice].nombre = this.nombreIntroducido;
+    this.categorias[indice].descripcion = this.descripcionIntroducido;
+    this.resetearFormulario();
+  }
+
   private resetearFormulario() {
     this.idIntroducido = 0;
     this.nombreIntroducido = '';

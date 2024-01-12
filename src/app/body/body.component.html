@@ -49,7 +49,7 @@
 
                 <div class="card-footer">
                   <button type="button" class="btn btn-success" (click)="agregarCategoria()">Guardar</button> &nbsp;
-                  <button type="button" class="btn btn-warning">Modificar</button>
+                  <button type="button" class="btn btn-warning" (click)="modificarCategoria()">Modificar</button>
                 </div>
                 <!-- /.card-footer -->
               </form>
@@ -81,8 +81,10 @@
                   <td>{{categoria.descripcion}}</td>
                   <td>
                     <!-- &nbsp; para espaciado entre botones -->
-                    <button type="button" class="btn btn-primary">Modificar</button> &nbsp;
-                    <button type="button" class="btn btn-danger" (click)="eliminarCategoria(categoria)">Eliminar</button>
+                    <button type="button" class="btn btn-primary" (click)="cargarCategoria(categoria)">Modificar
+                    </button> &nbsp;
+                    <button type="button" class="btn btn-danger" (click)="eliminarCategoria(categoria)">Eliminar
+                    </button>
                   </td>
 
                 </tr>
