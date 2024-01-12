@@ -1,16 +1,22 @@
 import {Component} from '@angular/core';
 import {NgForOf} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-body',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    FormsModule
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
+
+  idIntroducido: number = 0;
+  nombreIntroducido: string = '';
+  descripcionIntroducido: string = '';
 
   categorias: any[] = [
     {id: 20, nombre: "Alimentos", descripcion: "Alimentos para toda ocasión"},
@@ -22,5 +28,24 @@ export class BodyComponent {
     {id: 26, nombre: "Tecnología", descripcion: "Productos tecnológicos"},
     {id: 27, nombre: "Vestuario", descripcion: "Productos de vestuario"}
   ];
+
+  constructor() {
+  }
+
+  agregarCategoria() {
+    this.categorias.push({
+      id: this.idIntroducido,
+      nombre: this.nombreIntroducido,
+      descripcion: this.descripcionIntroducido,
+    });
+
+    this.resetearFormulario();
+  }
+
+  private resetearFormulario() {
+    this.idIntroducido = 0;
+    this.nombreIntroducido = '';
+    this.descripcionIntroducido = '';
+  }
 
 }
